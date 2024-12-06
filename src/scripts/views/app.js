@@ -1,5 +1,6 @@
-/* eslint-disable linebreak-style */
 import DrawerInitiator from '../utils/drawer-initiator';
+import UrlParser from '../routes/url-parser';
+import routes from '../routes/routes';
 
 class App {
   constructor({ button, drawer, content }) {
@@ -17,8 +18,25 @@ class App {
       content: this._content,
     });
 
-    // Komponen lain bisa diinisialisasi di sini
+    // kita bisa menginisiasikan komponen lain bila ada
+  }
+
+  async renderPage() {
+    const url = UrlParser.parseActiveUrlWithCombiner();
+    const page = routes[url];
+    this._content.innerHTML = await page.render();
+    await page.afterRender();
   }
 }
+
+const skipLinkElem = document.querySelector('.skip-to-content');
+skipLinkElem.addEventListener('click', (event) => {
+  event.preventDefault();
+
+  const mainContent = document.querySelector('#mainContent');
+  if (mainContent) {
+    mainContent.focus();
+  }
+});
 
 export default App;

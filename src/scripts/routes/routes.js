@@ -1,12 +1,15 @@
-/* eslint-disable linebreak-style */
-import DaftarRestoran from '../views/pages/daftar-res';
-import FavoriteRestoran from '../views/pages/favorite-res';
-import DetailRestoran from '../views/pages/detail-res';
+import Home from '../views/pages/home';
+import Favorite from '../views/pages/favorite';
+import About from '../views/pages/about';
+import Detail from '../views/pages/detail';
+
 
 const routes = {
-  '/': DaftarRestoran, // Home
-  '/favorite': FavoriteRestoran, // Halaman Favorite
-  '/detail/:id': DetailRestoran, // Halaman Detail
+  '/': Home,
+  '/home': Home,
+  '/favorite': Favorite,
+  '/about' : About,
+  '/detail/:id': Detail,
 };
 
 export default routes;

@@ -1,0 +1,108 @@
+/* Media query untuk layar sedang (≥650px) */
+@media (min-width: 768px) {
+  #drawer {
+    display: flex;
+    position: static;
+    background: none;
+  }
+  #nav-menu {
+    flex-direction: row;
+  }
+  #menu-button {
+    display: none;
+  }
+}
+
+/* Media query untuk layar besar (≥800px) */
+@media screen and (min-width: 800px) {
+  .app-bar .app-bar__brand h1 {
+    font-size: 2em;
+  }
+}
+
+/* Media query untuk layar tablet (≤768px) */
+@media (max-width: 768px) {
+  #restaurants {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Media query untuk layar kecil (≤480px) */
+@media (max-width: 480px) {
+  #restaurants {
+    grid-template-columns: 1fr;
+  }
+}
+/* Media query untuk layar sedang (≥768px) */
+@media (min-width: 768px) {
+  header {
+    padding: 20px 40px;
+  }
+
+  #drawer {
+    display: flex;
+    position: static;
+    background: none;
+    border: none;
+  }
+
+  #drawer ul {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+  }
+
+  #menu-button {
+    display: none;
+  }
+
+  #restaurants {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+}
+
+/* Media query untuk layar besar (≥1024px) */
+@media (min-width: 1024px) {
+  header {
+    padding: 20px 60px;
+  }
+
+  .logo h1 {
+    font-size: 2em;
+  }
+
+  #restaurants {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+  }
+}
+
+/* Media query untuk layar kecil (≤768px) */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  #restaurants {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .skip-to-content {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    z-index: 1000;
+    transform: translateY(-100%);
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .skip-to-content:focus {
+    transform: translateY(0);
+  }
+}

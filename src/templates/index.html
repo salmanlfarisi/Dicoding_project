@@ -1,47 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Free restaurant catalogue for you">
-    <link rel="icon" href="./favicon.png">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Free movie catalogue for you">
+  <link rel="icon" href="./favicon.png">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <script src="https://use.fontawesome.com/b070c8f1df.js"></script>
+  <link rel="manifest" href="./app.webmanifest">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" crossorigin="anonymous">
+  <link rel="apple-touch-icon" href="/icons/icon-192x192.png">
+  <meta name="theme-color" content="#DB0000"/>
+  <title>Hunger Apps</title>
+  <script src="footer-bar.js" type="module"></script>
 
-    <title>Hunger Apps</title>
+
 </head>
 <body>
-    <!-- Skip to Content Link -->
-    <a href="#maincontent" class="skip-link" tabindex="0">Skip to Content</a>
+  <a href="#mainContent" class="skip-to-content">Skip to Content</a>
+  <header>
+    <div class="logo">
+        <h1>Hunger Apps</h1>
+    </div>
+    <button id="menu-button" aria-label="Open navigation menu">☰</button>
+    <nav id="drawer">
+        <ul id="nav-menu" class="nav-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#/favorite">Favorite</a></li>
+            <li><a href="https://github.com/salmanlfarisi">About Us</a></li>
+        </ul>
+    </nav>
+</header>
 
-    <!-- Header Section -->
-    <header>
-        <div class="logo">
-            <h1>Hunger Apps</h1>
-        </div>
-        <button id="menu-button" aria-label="Open navigation menu">☰</button>
-        <nav id="drawer">
-            <ul id="nav-menu" class="nav-links">
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Favorite</a></li>
-                <li><a href="https://github.com/salmanlfarisi">About Us</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <!-- Main Content Section -->
-    <main id="main-content">
-        <section class="hero">
-            <img src="./images/heros/hero-image_1.jpg" alt="Chef Botak" />
-        </section>
-
-        <section id="restaurant-list">
-            <h2>Explore Restaurant</h2>
-            <div id="restaurant-container" class="restaurant-grid"></div>
-        </section>
-    </main>
-
-    <!-- Footer Section -->
+    
+    <main id="mainContent" tabindex="-1">
     <footer>
-        <p>Copyright © 2024 - Hunger Apps</p>
+        <footer-bar></footer-bar>
     </footer>
-</body>
-</html>
+
+  </body>
+  </html>

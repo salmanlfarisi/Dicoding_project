@@ -1,8 +1,16 @@
 * {
-  margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  margin: 0;
 }
+ 
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: white;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+ 
 .logo {
   font-size: 1.5rem;
   font-weight: bold;
@@ -59,43 +67,351 @@ a {
   font-size: 1.5rem;
   cursor: pointer;
 }
-@media (min-width: 768px) {
-  #drawer {
-    display: flex;
-    position: static;
-    background: none;
-  }
-  #nav-menu {
-    flex-direction: row;
-  }
-  #menu-button {
-    display: none;
-  }
+
+#drawer.open {
+  display: block;
 }
-.hero {
-  width: 100%;
+
+ 
+ 
+.explore h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin: 40px 0 20px;
+  color: #444;
 }
-.hero img {
-  width: 100%;
-  height: auto;
-}
-#restaurant-container {
+/* Restaurant List */
+.restaurant-list {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 1.5rem;
-  padding: 2rem;
+  grid-template-columns: repeat(3, 1fr); /* Memastikan 3 kolom */
+  gap: 20px;
+  padding: 0 20px;
+  max-width: 1200px;
+  margin: 0 auto;
 }
-.restaurant-card {
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  overflow: hidden;
+
+
+/* Restaurant Item */
+.restaurant-item {
   background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(218, 206, 206, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-.restaurant-card img {
+
+.restaurant-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(218, 206, 206, 0.2);
+}
+
+.restaurant-item__header {
+  position: relative;
+}
+
+.restaurant-item__image {
   width: 100%;
   height: 200px;
   object-fit: cover;
 }
+
+.restaurant-item__rating {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 0.9rem;
+}
+
+.restaurant-item__content {
+  padding: 20px;
+}
+
+.restaurant-item__content h3 {
+  font-size: 1.5rem;
+  margin: 0 0 10px;
+  color: #222;
+}
+
+.restaurant-item__location {
+  font-size: 0.9rem;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+.restaurant-item__description {
+  margin: 15px 0;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: #666;
+}
+
+.restaurant-item__cta {
+  display: inline-block;
+  padding: 100px 1500px;
+  min-width: 150px;
+  width: 44px;
+  height: 44px;
+
+  box-sizing: border-box; /* Tambahkan ini */
+  background-color: #387478;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  margin-top: 10px;
+  transition: background-color 0.3s ease;
+}
+
+
+.restaurant-item__cta:hover {
+  background-color: #387478;
+}
+
+ 
+
+
+
+
+/* Global Style */
+body {
+  font-family: 'Arial', sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  background-color: #f8f9fa;
+  color: #333;
+}
+
+h2, h3, h4 {
+  color: #444;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Restaurant Detail Page */
+.restaurant-detail {
+  margin: 20px auto;
+  max-width: 900px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.restaurant-detail__header {
+  position: relative;
+  text-align: center;
+  padding: 20px;
+}
+
+.restaurant-detail__name {
+  margin: 10px 0;
+  font-size: 24px;
+  font-weight: bold;
+  
+}
+
+.restaurant-detail__image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin: 10px 0;
+}
+
+.restaurant-detail__info, .restaurant-detail__menu, .restaurant-detail__reviews {
+  padding: 20px;
+  border-top: 1px solid #387478;
+  
+}
+
+.restaurant-detail__info p, 
+.restaurant-detail__menu ul, 
+.restaurant-detail__reviews .review {
+  margin: 10px 0;
+}
+
+.menu-section {
+  margin-top: 20px;
+}
+
+.menu-section ul {
+  list-style: disc inside;
+  padding-left: 20px;
+}
+
+.review {
+  background: #f9f9f9;
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Restaurant Item */
+.restaurant-item {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.restaurant-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.restaurant-item__header {
+  position: relative;
+}
+
+.restaurant-item__image {
+  max-width: 100%;
+  display: block;
+}
+
+.restaurant-item__rating {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: #ffc107;
+  padding: 5px 10px;
+  border-radius: 20px;
+  color: #fff;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.restaurant-item__content {
+  padding: 20px;
+}
+
+.restaurant-item__content h3 {
+  margin: 10px 0;
+}
+
+.restaurant-item__location {
+  font-size: 14px;
+  color: #777;
+}
+
+.restaurant-item__description {
+  margin: 10px 0;
+  color: #555;
+  font-size: 14px;
+  line-height: 1.5;
+  max-height: 50px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.restaurant-item__cta {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px 20px;
+  background: #387478;
+  color: #fff;
+  border-radius: 5px;
+  font-size: 14px;
+  text-transform: uppercase;
+  transition: background 0.3s ease;
+}
+
+.restaurant-item__cta:hover {
+  background: #EADBC8;
+  color: #387478;
+  font-weight: bold;
+}
+
+
+/* Like Button */
+.like {
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #db0000;
+  
+  position: fixed;
+  bottom: 16px;
+  right: 16px;
+  border-radius: 50%;
+  border: 0;
+  
+  font-size: 18px;
+  color: white;
+  cursor: pointer;
+}
+
+.like:hover {
+  color: #e91e63;
+}
+
+.hero {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.hero img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+.hero__content {
+  text-align: center;
+  color: white;
+  z-index: 1;
+}
+
+.hero__content h2 {
+  font-size: 4rem;
+  margin: 0;
+}
+
+.hero__content p {
+  font-size: 1.2rem;
+  margin-top: 0.5rem;
+}
+
+
+.skip-to-content {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background-color: #333;
+  color: #387478;
+  padding: 8px 16px;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: top 0.3s;
+  z-index: 1000;
+}
+
+.skip-to-content:focus {
+  top: 0;
+}
+
 footer {
   text-align: center;
   padding: 1rem;
